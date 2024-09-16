@@ -8,7 +8,7 @@ import UpdateCoffee from "./components/UpdateCoffee.jsx";
 import SignUp from "./components/SignUp.jsx";
 import SignIn from "./components/SignIn.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
-//coffee-master
+//coffee-mast
 
 const router = createBrowserRouter([
   {
