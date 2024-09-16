@@ -8,7 +8,7 @@ import UpdateCoffee from "./components/UpdateCoffee.jsx";
 import SignUp from "./components/SignUp.jsx";
 import SignIn from "./components/SignIn.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
-import Users from "./components/Users.jsx";
+//coffee-master
 
 const router = createBrowserRouter([
   {
@@ -27,19 +27,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <SignUp></SignUp>,
+    element: <SignUp />,
   },
   {
     path: "/signin",
-    element: <SignIn></SignIn>,
-  },
-  {
-    path: "/users",
-    element: <Users></Users>,
-    loader: () =>
-      fetch(
-        "https://coffee-store-server-74xiae2di-jhankarphero.vercel.app/user"
-      ),
+    element: <SignIn />,
   },
 ]);
 
