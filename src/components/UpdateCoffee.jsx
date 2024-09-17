@@ -32,6 +32,14 @@ const UpdateCoffee = () => {
     console.log(updatedCoffee);
 
     // send data to the server
+
+    // useEffect(() => {
+    //   fetch("https://dog.ceo/api/breeds/image/random")
+    //   .then(response => response.json())
+    //       // 4. Setting *dogImage* to the image url that we received from the response above
+    //   .then(data => setDogImage(data.message))
+    // },[])
+
     fetch(`http://localhost:5000/coffee/${_id}`, {
       method: "PUT",
       headers: {

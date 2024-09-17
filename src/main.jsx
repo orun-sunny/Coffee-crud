@@ -7,6 +7,7 @@ import AddCoffee from "./components/AddCoffee.jsx";
 import UpdateCoffee from "./components/UpdateCoffee.jsx";
 import SignUp from "./components/SignUp.jsx";
 import SignIn from "./components/SignIn.jsx";
+import Users from "./components//Users.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 //coffee-mast
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/signin",
     element: <SignIn />,
+  },
+  {
+    path: "/users",
+    element: <Users></Users>,
   },
 ]);
 
