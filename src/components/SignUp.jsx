@@ -16,13 +16,14 @@ const SignUp = () => {
         console.log(result.user);
         const user = { email, createdAt: createdAt };
         fetch(
-          "https://coffee-store-server-with-auth-main-kjzg4efon.vercel.app/user",
+          "https://coffee-store-server-with-auth-main-ashen.vercel.app/user",
           {
             method: "POST",
             headers: {
               "content-type": "application/json",
             },
             body: JSON.stringify(user),
+            mode: "no-cors",
           }
         )
           .then((res) => res.json())

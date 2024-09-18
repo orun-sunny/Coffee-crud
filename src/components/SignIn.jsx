@@ -20,13 +20,14 @@ const SignIn = () => {
         };
         // update last logged at in the database
         fetch(
-          "https://coffee-store-server-with-auth-main-kjzg4efon.vercel.app/user",
+          "https://coffee-store-server-with-auth-main-ashen.vercel.app/user",
           {
             method: "PATCH",
             headers: {
               "content-type": "application/json",
             },
             body: JSON.stringify(user),
+            mode: "no-cors",
           }
         )
           .then((res) => res.json())

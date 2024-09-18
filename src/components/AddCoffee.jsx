@@ -28,13 +28,14 @@ const AddCoffee = () => {
 
     // send data to the server
     fetch(
-      "https://coffee-store-server-with-auth-main-kjzg4efon.vercel.app/coffee",
+      "https://coffee-store-server-with-auth-main-ashen.vercel.app/coffee",
       {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
         body: JSON.stringify(newCoffee),
+        mode: "no-cors",
       }
     )
       .then((res) => res.json())

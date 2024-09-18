@@ -17,8 +17,18 @@ const router = createBrowserRouter([
     element: <App></App>,
     loader: () =>
       fetch(
-        "https://coffee-store-server-with-auth-main-kjzg4efon.vercel.app/coffee"
-      ),
+        "https://coffee-store-server-with-auth-main-ashen.vercel.app/coffee"
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch coffee data");
+          }
+          return response.json();
+        })
+        .catch((error) => {
+          console.error("Error fetching coffee:", error);
+          return { error: "Failed to load coffee data" };
+        }),
   },
   {
     path: "addCoffee",
@@ -29,8 +39,18 @@ const router = createBrowserRouter([
     element: <UpdateCoffee></UpdateCoffee>,
     loader: ({ params }) =>
       fetch(
-        `https://coffee-store-server-with-auth-main-kjzg4efon.vercel.app/coffee/${params.id}`
-      ),
+        `https://coffee-store-server-with-auth-main-ashen.vercel.app/coffee/${params.id}`
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch coffee data");
+          }
+          return response.json();
+        })
+        .catch((error) => {
+          console.error("Error fetching coffee:", error);
+          return { error: "Failed to load coffee data" };
+        }),
   },
   {
     path: "/signup",
@@ -44,9 +64,17 @@ const router = createBrowserRouter([
     path: "/users",
     element: <Users></Users>,
     loader: () =>
-      fetch(
-        "https://coffee-store-server-with-auth-main-kjzg4efon.vercel.app/user"
-      ),
+      fetch("https://coffee-store-server-with-auth-main-ashen.vercel.app/user")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch users");
+          }
+          return response.json();
+        })
+        .catch((error) => {
+          console.error("Error fetching users:", error);
+          return { error: "Failed to load users" };
+        }),
   },
 ]);
 

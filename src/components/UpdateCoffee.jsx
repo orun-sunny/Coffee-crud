@@ -41,13 +41,14 @@ const UpdateCoffee = () => {
     // },[])
 
     fetch(
-      `https://coffee-store-server-with-auth-main-kjzg4efon.vercel.app/coffee/${_id}`,
+      `https://coffee-store-server-with-auth-main-ashen.vercel.app/coffee/${_id}`,
       {
         method: "PUT",
         headers: {
           "content-type": "application/json",
         },
         body: JSON.stringify(updatedCoffee),
+        mode: "no-cors",
       }
     )
       .then((res) => res.json())
