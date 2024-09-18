@@ -4,6 +4,19 @@ import { useLoaderData } from "react-router-dom";
 const Users = () => {
   const loadedUsers = useLoaderData();
   const [users, setUsers] = useState(loadedUsers);
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/user/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          console.log("delete succesfully");
+          const remainingUsers = users.filter((user) => user._id !== id);
+          setUsers(remainingUsers);
+        }
+      });
+  };
 
   return (
     <div>
