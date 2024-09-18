@@ -15,13 +15,16 @@ const SignUp = () => {
         const createdAt = result.user?.metadata.creationTime;
         console.log(result.user);
         const user = { email, createdAt: createdAt };
-        fetch("http://localhost:5000/user", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        })
+        fetch(
+          "https://coffee-store-server-with-auth-main-kjzg4efon.vercel.app/user",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.insertedId) {
